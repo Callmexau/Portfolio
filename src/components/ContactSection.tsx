@@ -54,23 +54,23 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-8 md:py-12 px-4 md:px-12 lg:px-24">
+    <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-foreground/[0.02] border border-foreground/10 rounded-[2rem] p-6 md:p-10 lg:p-14 relative overflow-hidden"
+          className="bg-foreground/[0.02] border border-foreground/10 rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-14 relative overflow-hidden"
         >
           {/* Background Accent Gradient */}
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_50%,rgba(184,148,30,0.05),transparent_50%)] pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center relative z-10">
             <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-8 h-[1px] bg-accent/50" />
-                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-foreground/40 font-medium whitespace-nowrap">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-8 h-[1px] bg-accent/50 shrink-0" />
+                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-foreground/40 font-medium leading-relaxed">
                   {t('contact_tagline')}
                 </span>
               </div>
