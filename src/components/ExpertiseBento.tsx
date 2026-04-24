@@ -230,7 +230,6 @@ export function ExpertiseBento() {
                 { n: "Git", i: "git" },
                 { n: "GitHub", i: "github" },
                 { n: "VS Code", i: "vscode" },
-                { n: "Resend", i: "resend" },
                 { n: "PostgreSQL", i: "postgres" },
                 { n: "MySQL", i: "mysql" },
                 // Duplicate for loop
@@ -240,7 +239,6 @@ export function ExpertiseBento() {
                 { n: "Git", i: "git" },
                 { n: "GitHub", i: "github" },
                 { n: "VS Code", i: "vscode" },
-                { n: "Resend", i: "resend" },
                 { n: "PostgreSQL", i: "postgres" },
                 { n: "MySQL", i: "mysql" }
               ].map((t, i) => (
