@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       from: 'Portfolio <onboarding@resend.dev>', // Resend use this by default for testing
       to: ['exaucejacksonl@gmail.com'], // Your email
       subject: `Nouveau message de ${name} via Portfolio`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333;">
           <h2 style="color: #B8941E;">Nouveau message de contact</h2>
