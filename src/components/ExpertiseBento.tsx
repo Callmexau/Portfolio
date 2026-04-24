@@ -43,15 +43,14 @@ export function ExpertiseBento() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
+    visible: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.15,
         duration: 0.7,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
-    }),
+    },
   };
 
   return (
@@ -80,10 +79,10 @@ export function ExpertiseBento() {
         {expertise.map((item, i) => (
           <motion.div
             key={item.gridArea}
-            custom={i}
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
+            transition={{ delay: i * 0.1 }}
             whileHover={{ 
               y: -8,
               scale: 1.01,

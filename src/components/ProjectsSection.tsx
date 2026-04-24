@@ -57,15 +57,14 @@ export function ProjectsSection() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
+    visible: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.12,
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
-    }),
+    },
   };
 
   return (
@@ -94,10 +93,10 @@ export function ProjectsSection() {
         {projects.map((project, i) => (
             <motion.article
               key={project.title}
-              custom={i}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
+              transition={{ delay: i * 0.1 }}
               whileHover={{ 
               x: 10,
               backgroundColor: "rgba(184, 148, 30, 0.02)",
