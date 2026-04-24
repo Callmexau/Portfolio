@@ -67,17 +67,17 @@ export default function ArkanPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="relative shrink-0"
+                className="relative shrink-0 flex justify-center md:justify-end w-full md:w-auto mt-4 md:mt-0"
               >
                 <img 
                   src="/Arkan-White.PNG" 
                   alt="Arkan Logo" 
-                  className="h-16 md:h-20 w-auto dark:hidden scale-[1.5] md:scale-[2] origin-right" 
+                  className="h-12 md:h-20 w-auto dark:hidden scale-[1.5] md:scale-[2] origin-center md:origin-right" 
                 />
                 <img 
                   src="/Arkan-Black.PNG" 
                   alt="Arkan Logo" 
-                  className="h-16 md:h-20 w-auto hidden dark:block scale-[1.5] md:scale-[2] origin-right" 
+                  className="h-12 md:h-20 w-auto hidden dark:block scale-[1.5] md:scale-[2] origin-center md:origin-right" 
                 />
               </motion.div>
             </div>
