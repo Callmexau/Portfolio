@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Exaucé Jackson L. | Architecte de Solutions Digitales",
     description: "Conception de systèmes durables et architectures logicielles modernes.",
-    url: "https://votre-portfolio.com",
+    url: "https://exaucejacksonl.vercel.app",
     siteName: "Portfolio J. Exaucé Jackson",
     locale: "fr_FR",
     type: "website",
