@@ -83,49 +83,23 @@ export default function AboutPage() {
 
             {/* Signature & Actions Section */}
             <div className="mt-24 pt-12 border-t border-foreground/5 flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="flex items-center justify-start gap-16 flex-1">
-                {/* Premier Logo Group */}
-                <div className="flex items-center">
-                  <img 
-                    src="/logo-white.jpg.jpeg" 
-                    alt="Logo" 
-                    className="h-10 w-auto dark:hidden scale-[2.5] origin-left" 
-                  />
-                  <img 
-                    src="/logo-black.jpg.jpeg" 
-                    alt="Logo" 
-                    className="h-10 w-auto hidden dark:block scale-[2.5] origin-left" 
-                  />
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-10 md:gap-16 flex-1 w-full px-4 md:px-0">
+                {/* Signature */}
+                <div className="flex items-center justify-center">
+                  <img src="/logo-white.jpg.jpeg" alt="Signature" className="h-6 md:h-10 w-auto dark:hidden scale-[2] md:scale-[2.5] origin-center" />
+                  <img src="/logo-black.jpg.jpeg" alt="Signature" className="h-6 md:h-10 w-auto hidden dark:block scale-[2] md:scale-[2.5] origin-center" />
+                </div>
+                
+                {/* The Joker */}
+                <div className="flex items-center justify-center">
+                  <img src="/The-White.png" alt="The Joker" className="h-8 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
+                  <img src="/The-Black.png" alt="The Joker" className="h-8 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
                 </div>
 
-                <div className="flex items-center gap-8">
-                  {/* Second Logo Group (The) */}
-                  <div className="flex items-center">
-                    <img 
-                      src="/The-White.png" 
-                      alt="The" 
-                      className="h-10 w-auto dark:hidden scale-[1.8] origin-left" 
-                    />
-                    <img 
-                      src="/The-Black.png" 
-                      alt="The" 
-                      className="h-10 w-auto hidden dark:block scale-[1.8] origin-left" 
-                    />
-                  </div>
-
-                  {/* Troisième Logo Group (Arkan) */}
-                  <div className="flex items-center">
-                    <img 
-                      src="/Arkan-White.PNG" 
-                      alt="Arkan" 
-                      className="h-10 w-auto dark:hidden scale-[1.8] origin-left" 
-                    />
-                    <img 
-                      src="/Arkan-Black.PNG" 
-                      alt="Arkan" 
-                      className="h-10 w-auto hidden dark:block scale-[1.8] origin-left" 
-                    />
-                  </div>
+                {/* Arkan */}
+                <div className="flex items-center justify-center">
+                  <img src="/Arkan-White.PNG" alt="Arkan" className="h-6 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
+                  <img src="/Arkan-Black.PNG" alt="Arkan" className="h-6 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
                 </div>
               </div>
 
