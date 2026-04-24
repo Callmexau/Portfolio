@@ -23,12 +23,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "J. Exaucé Jackson | Architecte de Solutions Digitales | Portfolio Premium",
+  title: "Exaucé Jackson L. | Architecte de Solutions Digitales | Portfolio",
   description: "Ingénieur logiciel & Architecte de solutions spécialisé dans la conception de systèmes robustes et durables. Découvrez l'expertise de J. Exaucé Jackson, fondateur de Arkan.",
   keywords: ["Ingénieur Logiciel", "Architecte Solutions", "Développement Web", "Next.js", "Laravel", "Portfolio Premium", "Exaucé Jackson", "Arkan"],
-  authors: [{ name: "J. Exaucé Jackson" }],
+  authors: [{ name: "Exaucé Jackson L." }],
   openGraph: {
-    title: "J. Exaucé Jackson | Architecte de Solutions Digitales",
+    title: "Exaucé Jackson L. | Architecte de Solutions Digitales",
     description: "Conception de systèmes durables et architectures logicielles modernes.",
     url: "https://votre-portfolio.com",
     siteName: "Portfolio J. Exaucé Jackson",
