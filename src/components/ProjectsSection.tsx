@@ -68,11 +68,11 @@ export function ProjectsSection() {
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-[1px] bg-accent" />
           <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
-            {t('proj_tagline')}
+            {t('projects_tagline')}
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight leading-[1.15]">
-          {t('proj_title')}
+          {t('projects_title')}
         </h2>
       </motion.div>
 
