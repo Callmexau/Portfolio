@@ -157,7 +157,8 @@ export function ContactSection() {
           {/* Social shortcut or alternative */}
           <div className="mt-16 pt-8 border-t border-foreground/5 w-full flex flex-col items-center gap-4">
             <span className="text-[10px] uppercase tracking-[0.2em] text-foreground/30">{t('contact_social_label')}</span>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+              <a href="mailto:exaucejacksonl@gmail.com" className="text-foreground/40 hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-medium">Email</a>
               <a href="https://www.linkedin.com/in/exaucéjacksonl" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-medium">LinkedIn</a>
               <a href="https://github.com/Callmexau" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-medium">GitHub</a>
             </div>
