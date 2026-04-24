@@ -29,14 +29,14 @@ export default function Home() {
 
       <div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8">
         {/* ── Hero Card ── */}
-        <div className="w-full h-[calc(100vh-140px)] min-h-[500px] bg-background rounded-[2rem] border border-foreground/10 relative overflow-hidden flex flex-col shadow-2xl shadow-black/5">
+        <div className="w-full min-h-[calc(100vh-140px)] bg-background rounded-[2rem] border border-foreground/10 relative overflow-hidden flex flex-col shadow-2xl shadow-black/5">
 
         
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col md:flex-row relative overflow-hidden">
 
           {/* Left Column: Typography */}
-          <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10 relative">
+          <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 md:py-0 z-10 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
