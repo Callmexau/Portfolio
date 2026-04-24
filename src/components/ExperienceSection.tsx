@@ -36,20 +36,6 @@ const experiences = [
   },
 ];
 
-
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-};
-
 export function ExperienceSection() {
   return (
     <section id="experience" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
@@ -81,10 +67,13 @@ export function ExperienceSection() {
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.period}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ delay: i * 0.1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ 
+                delay: i * 0.1,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
               viewport={{ once: true, margin: "-50px" }}
               className="group relative flex flex-col md:flex-row gap-4 md:gap-12"
             >

@@ -41,18 +41,6 @@ export function ExpertiseBento() {
     },
   ];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
   return (
     <section id="expertise" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
       {/* Section Header */}
@@ -79,10 +67,13 @@ export function ExpertiseBento() {
         {expertise.map((item, i) => (
           <motion.div
             key={item.gridArea}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ delay: i * 0.1 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              delay: i * 0.1,
+              duration: 0.7,
+              ease: "easeOut"
+            }}
             whileHover={{ 
               y: -8,
               scale: 1.01,
@@ -100,51 +91,38 @@ export function ExpertiseBento() {
             )}
 
             <div className="relative z-10 flex flex-col h-full">
-              {/* Card Header */}
-              <div className="mb-auto">
-                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-accent/80 block mb-3">
-                  {item.subtitle}
-                </span>
-                <h3 className="text-xl md:text-2xl font-[family-name:var(--font-playfair)] font-semibold tracking-tight mb-4 group-hover:text-accent transition-colors duration-500">
-                  {item.title}
-                </h3>
-                <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-light max-w-sm">
-                  {item.description}
-                </p>
+              <div className="mb-6">
+                <span className="text-[9px] uppercase tracking-[0.3em] text-accent font-bold mb-2 block">{item.subtitle}</span>
+                <h3 className="text-xl md:text-2xl font-[family-name:var(--font-playfair)] font-bold tracking-tight group-hover:text-accent transition-colors duration-500">{item.title}</h3>
               </div>
+              
+              <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-light mb-8 flex-1">
+                {item.description}
+              </p>
 
-              {/* Technology Tags */}
-              <div className="flex flex-wrap gap-2 mt-8">
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {item.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-[9px] md:text-[10px] uppercase tracking-[0.15em] px-3 py-1.5 rounded-full border border-foreground/10 text-foreground/50 group-hover:border-accent/30 group-hover:text-foreground/70 transition-all duration-500"
-                  >
+                  <span key={tech} className="text-[8px] md:text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-md border border-foreground/5 bg-foreground/[0.01] text-foreground/40 group-hover:border-accent/20 group-hover:text-foreground/60 transition-all duration-500">
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
-
-            {/* Large decorative number */}
-            <span className="absolute -bottom-4 -right-2 text-[8rem] md:text-[10rem] font-[family-name:var(--font-playfair)] font-bold leading-none text-foreground/[0.03] select-none pointer-events-none">
-              {String(i + 1).padStart(2, "0")}
-            </span>
           </motion.div>
         ))}
       </div>
 
-      {/* ── Stack Technique (Défilement Infini) ── */}
+      {/* Skills Marquee Section */}
       <motion.div
-        className="mt-24 md:mt-32 overflow-hidden relative"
+        className="mt-16 md:mt-24"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <div className="flex items-center gap-4 mb-12 px-0">
-          <div className="w-8 h-[1px] bg-accent/50" />
-          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/50">
+        <div className="flex items-center gap-4 mb-10">
+          <div className="w-8 h-[1px] bg-foreground/10" />
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/20">
             {t('expertise_stack')}
           </span>
         </div>

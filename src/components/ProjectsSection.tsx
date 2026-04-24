@@ -55,18 +55,6 @@ export function ProjectsSection() {
     },
   ];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
   return (
     <section id="realisations" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
       {/* Section Header */}
@@ -80,24 +68,27 @@ export function ProjectsSection() {
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-[1px] bg-accent" />
           <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
-            {t('projects_tagline')}
+            {t('proj_tagline')}
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight leading-[1.15]">
-          {t('projects_title')}
+          {t('proj_title')}
         </h2>
       </motion.div>
 
       {/* Projects List */}
       <div className="flex flex-col gap-0">
         {projects.map((project, i) => (
-            <motion.article
-              key={project.title}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ 
+          <motion.article
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              delay: i * 0.1,
+              duration: 0.6,
+              ease: "easeOut"
+            }}
+            whileHover={{ 
               x: 10,
               backgroundColor: "rgba(184, 148, 30, 0.02)",
               transition: { duration: 0.4, ease: "easeOut" }
@@ -105,59 +96,58 @@ export function ProjectsSection() {
             viewport={{ once: true, margin: "-50px" }}
             className="group relative border-t border-foreground/10 py-10 md:py-16 cursor-pointer transition-all duration-700"
           >
-              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 relative z-10 transition-transform duration-700 group-hover:translate-x-4">
-                {/* Year + Category */}
-                <div className="flex flex-col gap-1 md:w-48 shrink-0">
-                  <span className="text-[10px] md:text-xs text-accent font-mono tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">
-                    {project.year}
-                  </span>
-                  <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/30 group-hover:text-foreground/50 transition-colors">
-                    {project.category}
-                  </span>
-                </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 relative z-10 transition-transform duration-700 group-hover:translate-x-4">
+              {/* Year + Category */}
+              <div className="flex flex-col gap-1 md:w-48 shrink-0">
+                <span className="text-[10px] font-mono text-accent tracking-wider">{project.year}</span>
+                <span className="text-[9px] uppercase tracking-[0.2em] text-foreground/30 font-medium">{project.category}</span>
+              </div>
 
-                {/* Title + Description */}
-                <div className="flex-1">
-                  <div className="flex items-center justify-between gap-6">
-                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight group-hover:text-accent transition-all duration-700">
-                      {project.title}
-                    </h3>
-                    
-                    <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-4 group-hover:translate-x-0">
-                       <span className="hidden lg:block text-[9px] uppercase tracking-[0.3em] text-accent font-semibold">{t('projects_discover')}</span>
-                       {project.link && (
-                        <div className="p-3 rounded-full border border-accent/30 text-accent">
-                           {project.linkType === "github" ? <GithubIcon className="w-5 h-5" /> : <ExternalLink className="w-5 h-5" />}
-                        </div>
-                       )}
-                    </div>
-                  </div>
-                  
-                  <p className="text-xs md:text-sm text-foreground/40 leading-relaxed font-light mt-4 max-w-xl group-hover:text-foreground/70 transition-colors duration-700">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {project.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[9px] md:text-[10px] uppercase tracking-[0.15em] px-3 py-1 rounded-full border border-foreground/5 bg-foreground/[0.02] text-foreground/30 group-hover:border-accent/20 group-hover:text-accent transition-all duration-700"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              {/* Title + Stack */}
+              <div className="flex-1">
+                <h3 className="text-2xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold tracking-tight mb-3">
+                  {project.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="text-[9px] md:text-[10px] uppercase tracking-widest text-foreground/40 font-light border border-foreground/5 px-2 py-1 rounded">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              {/* Animated background reveal */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              <div className="absolute left-0 top-0 h-full w-[2px] bg-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
-            </motion.article>
-        ))}
+              {/* Description */}
+              <div className="md:max-w-xs lg:max-w-md">
+                <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-light">
+                  {project.description}
+                </p>
+              </div>
 
-        {/* Bottom border */}
-        <div className="border-t border-foreground/10" />
+              {/* Action Button */}
+              <div className="shrink-0 flex gap-4">
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-foreground/10 flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all duration-500 group/btn"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {project.linkType === 'github' ? (
+                      <GithubIcon className="w-4 h-4 md:w-5 md:h-5 text-foreground/40 group-hover/btn:text-accent" />
+                    ) : (
+                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-foreground/40 group-hover/btn:text-accent" />
+                    )}
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Background Glow on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          </motion.article>
+        ))}
       </div>
     </section>
   );
