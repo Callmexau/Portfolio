@@ -59,14 +59,20 @@ const translations = {
     projects_discover: "Découvrir",
     
     proj_flow_cat: "Application Desktop",
-    proj_flow_desc: "Application desktop multiplateforme de conversion de formats de fichiers. Disponible sur Windows, macOS et Linux.",
+    proj_flow_desc: "Application desktop de conversion de formats de fichiers. Disponible sur Windows.",
     
     proj_utopia_cat: "Service Web",
     proj_utopia_desc: "Service web d'invitations numériques personnalisées — création, personnalisation et partage d'invitations élégantes en ligne.",
     
-    proj_focus_cat: "Web Application",
+    proj_focus_cat: "Application Web",
     proj_focus_desc: "Application web de gestion des tâches basée sur la matrice d'Eisenhower pour prioriser efficacement et gagner en productivité.",
     
+    proj_cimburkina_cat: "Application Web",
+    proj_cimburkina_desc: "Conception et développement d'une plateforme de gestion des stages pour CIMBURKINA.",
+    
+    proj_mccat_cat: "Application Web",
+    proj_mccat_desc: "Conception, développement et intégration d'une plateforme de gestion des stages pour le Ministère de la Communication (MCCAT).",
+
     proj_sankara_cat: "Site Web Institutionnel",
     proj_sankara_desc: "Participation à la création du site web officiel du Mémorial Thomas Sankara pour le Ministère de la Communication du Burkina Faso.",
     
@@ -156,7 +162,7 @@ const translations = {
     projects_discover: "Discover",
     
     proj_flow_cat: "Desktop Application",
-    proj_flow_desc: "Cross-platform desktop application for file format conversion. Available on Windows, macOS, and Linux.",
+    proj_flow_desc: "Desktop application for file format conversion. Available on Windows.",
     
     proj_utopia_cat: "Web Service",
     proj_utopia_desc: "Web service for personalized digital invitations — creation, customization, and sharing of elegant online invitations.",
@@ -164,6 +170,12 @@ const translations = {
     proj_focus_cat: "Web Application",
     proj_focus_desc: "Web application for task management based on the Eisenhower matrix to prioritize effectively and gain productivity.",
     
+    proj_cimburkina_cat: "Web Application",
+    proj_cimburkina_desc: "Design and development of an internship management platform for CIMBURKINA.",
+    
+    proj_mccat_cat: "Web Application",
+    proj_mccat_desc: "Design, development, and integration of an internship management platform for the Ministry of Communication (MCCAT).",
+
     proj_sankara_cat: "Institutional Website",
     proj_sankara_desc: "Participation in the creation of the official website for the Thomas Sankara Memorial for the Ministry of Communication of Burkina Faso.",
     

@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
+import { ExternalLink } from "lucide-react";
+
 export function ExpertiseBento() {
   const { t } = useLanguage();
 
@@ -255,23 +257,27 @@ export function ExpertiseBento() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { name: "Automate Cybersecurity Tasks with Python", org: "Google — Coursera" },
-            { name: "Fondamentaux du marketing numérique", org: "Google — L'Atelier Numérique" },
-            { name: "Google Cybersecurity", org: "Coursera — Certification professionnelle" },
-            { name: "Google Project Management", org: "Coursera — Certification professionnelle" },
-            { name: "Data Engineering Essentials", org: "IBM — Coursera" },
-            { name: "Agile Project Management", org: "Coursera — Formation certifiante" },
+            { name: "Automate Cybersecurity Tasks with Python", org: "Google — Coursera", file: "/certs/automate-cybersecurity.pdf" },
+            { name: "Fondamentaux du marketing numérique", org: "Google — L'Atelier Numérique", file: "/certs/marketing-numerique.pdf" },
+            { name: "Google Cybersecurity", org: "Coursera — Certification professionnelle", file: "/certs/google-cybersecurity.pdf" },
+            { name: "Google Project Management", org: "Coursera — Certification professionnelle", file: "/certs/google-project-management.pdf" },
+            { name: "Data Engineering Essentials", org: "IBM — Coursera", file: "/certs/data-engineering.pdf" },
+            { name: "Agile Project Management", org: "Coursera — Formation certifiante", file: "/certs/agile-project-management.pdf" },
           ].map((cert) => (
-            <div
+            <a
               key={cert.name}
-              className="flex items-start gap-3 py-3 px-4 rounded-xl border border-foreground/5 hover:border-accent/20 transition-colors duration-500"
+              href={cert.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 py-3 px-4 rounded-xl border border-foreground/5 hover:border-accent/30 hover:bg-accent/[0.02] transition-all duration-500 cursor-pointer"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-accent/60 mt-1.5 shrink-0" />
-              <div>
-                <span className="text-xs md:text-sm font-medium text-foreground/70 block">{cert.name}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-accent/60 mt-1.5 shrink-0 group-hover:bg-accent transition-colors duration-500" />
+              <div className="flex-1">
+                <span className="text-xs md:text-sm font-medium text-foreground/70 block group-hover:text-accent transition-colors duration-500">{cert.name}</span>
                 <span className="text-[9px] md:text-[10px] text-foreground/35">{cert.org}</span>
               </div>
-            </div>
+              <ExternalLink className="w-3.5 h-3.5 text-foreground/20 group-hover:text-accent/60 mt-1 shrink-0 transition-colors duration-500" />
+            </a>
           ))}
         </div>
       </motion.div>
