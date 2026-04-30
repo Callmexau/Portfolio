@@ -21,6 +21,7 @@ const translations = {
     nav_arkan: "Arkan.",
     nav_contact: "Contact",
     nav_expertise: "Expertise",
+    nav_experience: "Expérience",
     nav_cv: "CV",
     
     // Hero
@@ -52,11 +53,27 @@ const translations = {
     exp_desktop_title: "Applications Desktop",
     exp_desktop_subtitle: "Solutions Logicielles",
     exp_desktop_desc: "Conception de logiciels natifs (Windows) pour répondre aux besoins spécifiques des entreprises et des particuliers.",
+
+    exp_modeling_title: "Modélisation & Gestion de projet",
+    exp_modeling_subtitle: "Analyse & Conception",
+    exp_modeling_desc: "Modélisation de systèmes avec UML et Merise, planification de projets avec StarUML et GanttProject, pilotage en méthode Agile.",
     
     // Projects Section
     projects_tagline: "Réalisations sélectionnées",
     projects_title: "Réalisations",
     projects_discover: "Découvrir",
+
+    // Experience Section
+    exp_tagline: "Parcours professionnel",
+    exp_title: "Expérience",
+    exp_cv_desc: "Format PDF — Parcours complet, formation et compétences",
+    exp_languages: "Langues",
+    exp_lang_fr: "Français — Natif",
+    exp_lang_en: "Anglais — Courant",
+    exp_soft_skills: "Soft Skills",
+    exp_skills_list: "Adaptabilité,Polyvalence,Créativité,Travail d'équipe,Autonomie",
+    exp_cta_text: "Intéressé par une collaboration ? Discutons de votre prochain projet.",
+    exp_cta_btn: "Me contacter",
     
     proj_flow_cat: "Application Desktop",
     proj_flow_desc: "Application desktop de conversion de formats de fichiers. Disponible sur Windows.",
@@ -69,6 +86,9 @@ const translations = {
     
     proj_cimburkina_cat: "Application Web",
     proj_cimburkina_desc: "Conception et développement d'une plateforme de gestion des stages pour CIMBURKINA.",
+
+    proj_cimconvert_cat: "Application Web & Desktop",
+    proj_cimconvert_desc: "Outil de conversion de formats de fichiers développé pour CIMBURKINA — disponible en version web et en application desktop Windows.",
     
     proj_mccat_cat: "Application Web",
     proj_mccat_desc: "Conception, développement et intégration d'une plateforme de gestion des stages pour le Ministère de la Communication (MCCAT).",
@@ -124,6 +144,7 @@ const translations = {
     nav_arkan: "Arkan.",
     nav_contact: "Contact",
     nav_expertise: "Expertise",
+    nav_experience: "Experience",
     nav_cv: "Resume",
     
     // Hero
@@ -155,11 +176,27 @@ const translations = {
     exp_desktop_title: "Desktop Applications",
     exp_desktop_subtitle: "Software Solutions",
     exp_desktop_desc: "Design of native software (Windows) to meet the specific needs of companies and individuals.",
+
+    exp_modeling_title: "Modelling & Project Management",
+    exp_modeling_subtitle: "Analysis & Design",
+    exp_modeling_desc: "System modelling with UML and Merise, project planning with StarUML and GanttProject, Agile project management.",
     
     // Projects Section
     projects_tagline: "Selected Achievements",
     projects_title: "Projects",
     projects_discover: "Discover",
+
+    // Experience Section
+    exp_tagline: "Professional Background",
+    exp_title: "Experience",
+    exp_cv_desc: "PDF Format — Full background, training & skills",
+    exp_languages: "Languages",
+    exp_lang_fr: "French — Native",
+    exp_lang_en: "English — Fluent",
+    exp_soft_skills: "Soft Skills",
+    exp_skills_list: "Adaptability,Versatility,Creativity,Teamwork,Autonomy",
+    exp_cta_text: "Interested in a collaboration? Let's discuss your next project.",
+    exp_cta_btn: "Contact me",
     
     proj_flow_cat: "Desktop Application",
     proj_flow_desc: "Desktop application for file format conversion. Available on Windows.",
@@ -172,6 +209,9 @@ const translations = {
     
     proj_cimburkina_cat: "Web Application",
     proj_cimburkina_desc: "Design and development of an internship management platform for CIMBURKINA.",
+
+    proj_cimconvert_cat: "Web & Desktop Application",
+    proj_cimconvert_desc: "File format conversion tool developed for CIMBURKINA — available as a web version and a Windows desktop application.",
     
     proj_mccat_cat: "Web Application",
     proj_mccat_desc: "Design, development, and integration of an internship management platform for the Ministry of Communication (MCCAT).",

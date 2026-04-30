@@ -41,6 +41,14 @@ export function ExpertiseBento() {
       gridArea: "method",
       accent: false,
     },
+    {
+      title: t('exp_modeling_title'),
+      subtitle: t('exp_modeling_subtitle'),
+      description: t('exp_modeling_desc'),
+      technologies: ["StarUML", "GanttProject", "UML", "Merise", "Agile", "2TUP", "Cascade", "Cycle en V"],
+      gridArea: "modeling",
+      accent: false,
+    },
   ];
 
   return (
@@ -204,7 +212,6 @@ export function ExpertiseBento() {
             >
               {[
                 { n: "Docker", i: "docker" },
-                { n: "Antigravity", i: "rocket" },
                 { n: "Electron", i: "electron" },
                 { n: "Git", i: "git" },
                 { n: "GitHub", i: "github" },
@@ -213,7 +220,6 @@ export function ExpertiseBento() {
                 { n: "MySQL", i: "mysql" },
                 // Duplicate for loop
                 { n: "Docker", i: "docker" },
-                { n: "Antigravity", i: "rocket" },
                 { n: "Electron", i: "electron" },
                 { n: "Git", i: "git" },
                 { n: "GitHub", i: "github" },

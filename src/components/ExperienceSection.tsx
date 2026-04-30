@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const experiences = [
   {
@@ -37,6 +38,8 @@ const experiences = [
 ];
 
 export function ExperienceSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
       {/* Section Header */}
@@ -50,11 +53,11 @@ export function ExperienceSection() {
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-[1px] bg-accent" />
           <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
-            Parcours professionnel
+            {t('exp_tagline')}
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight leading-[1.15]">
-          Expérience
+          {t('exp_title')}
         </h2>
       </motion.div>
 
@@ -137,7 +140,7 @@ export function ExperienceSection() {
         </div>
 
         <a
-          href="/cv.pdf"
+          href="/CV Jackson Lountadiladio.pdf"
           download
           className="group relative flex items-center gap-6 md:gap-8 py-8 px-8 md:px-12 rounded-2xl border border-foreground/10 hover:border-accent/40 transition-all duration-500 bg-accent/[0.02] hover:bg-accent/[0.05]"
         >
@@ -146,10 +149,10 @@ export function ExperienceSection() {
           </div>
           <div>
             <h4 className="text-lg md:text-xl font-[family-name:var(--font-playfair)] font-semibold tracking-tight group-hover:text-accent transition-colors duration-500">
-              Télécharger mon CV
+              {t('about_cv')}
             </h4>
             <p className="text-[10px] md:text-xs text-foreground/50 mt-1 uppercase tracking-[0.15em]">
-              Format PDF — Parcours complet, formation et compétences
+              {t('exp_cv_desc')}
             </p>
           </div>
           <div className="ml-auto hidden md:block">
@@ -167,27 +170,27 @@ export function ExperienceSection() {
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <div>
-          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/40 block mb-4">Langues</span>
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/40 block mb-4">{t('exp_languages')}</span>
           <div className="flex gap-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-accent" />
-              <span className="text-xs text-foreground/60">Français — Natif</span>
+              <span className="text-xs text-foreground/60">{t('exp_lang_fr')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-accent/50" />
-              <span className="text-xs text-foreground/60">Anglais — Courant</span>
+              <span className="text-xs text-foreground/60">{t('exp_lang_en')}</span>
             </div>
           </div>
         </div>
         <div>
-          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/40 block mb-4">Soft Skills</span>
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-foreground/40 block mb-4">{t('exp_soft_skills')}</span>
           <div className="flex flex-wrap gap-2">
-            {["Adaptabilité", "Polyvalence", "Créativité", "Travail d'équipe", "Autonomie"].map((skill) => (
+            {(t('exp_skills_list') as string).split(',').map((skill) => (
               <span
                 key={skill}
                 className="text-[9px] md:text-[10px] uppercase tracking-[0.15em] px-3 py-1.5 rounded-full border border-foreground/8 text-foreground/40"
               >
-                {skill}
+                {skill.trim()}
               </span>
             ))}
           </div>
@@ -203,14 +206,14 @@ export function ExperienceSection() {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <p className="text-xs md:text-sm text-foreground/40 font-light mb-6 max-w-md">
-          Intéressé par une collaboration ? Discutons de votre prochain projet.
+          {t('exp_cta_text')}
         </p>
         <a
           href="mailto:exaucejacksonl@gmail.com"
           className="group flex items-center gap-4 md:gap-6 px-6 py-3 md:px-8 md:py-4 rounded-full border border-accent/40 hover:border-accent hover:bg-accent/5 transition-all duration-500"
         >
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-accent">
-            Me contacter
+            {t('exp_cta_btn')}
           </span>
         </a>
 
