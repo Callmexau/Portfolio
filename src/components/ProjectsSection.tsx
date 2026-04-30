@@ -65,7 +65,7 @@ function ScreenshotCarousel({ screens, title }: { screens: string[]; title: stri
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-44 md:h-60 object-cover object-top"
+              className="w-full h-44 md:h-60 object-contain"
             />
           </AnimatePresence>
 
