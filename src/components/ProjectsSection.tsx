@@ -153,7 +153,7 @@ export function ProjectsSection() {
       title: "CimConvert",
       category: t('proj_cimconvert_cat'),
       description: t('proj_cimconvert_desc'),
-      stack: ["Electron", "JavaScript", "Node.js", "PHP", "Laravel"],
+      stack: ["Electron", "JavaScript", "Node.js"],
       year: "2026",
       link: null,
       linkType: "none" as const,
