@@ -26,8 +26,8 @@ const translations = {
     
     // Hero
     hero_tagline: "The Architect of Quiet Power",
-    hero_title: "Ingénieur logiciel & Architecte de solutions digitales",
-    hero_founder: "Fondateur de Arkan.",
+    hero_title: "Ingénieur logiciel & Architecte de solutions numériques",
+    hero_founder: "Fondateur De Arkan.",
     hero_description: "Je conçois des systèmes durables — applications web, logiciels métier, plateformes. Chaque solution est pensée pour résoudre des problèmes réels et créer un impact mesurable.",
     hero_cta_expertise: "Expertise",
     hero_cta_cv: "Télécharger CV",
@@ -116,7 +116,7 @@ const translations = {
     about_bio_1: "Avec une expérience concrète sur des projets livrés pour des institutions gouvernementales et des entreprises industrielles, je conçois des architectures robustes, des produits SaaS et des applications web et mobile pensées pour durer.",
     about_bio_2: "Mon parcours est atypique : études de médecine, puis pivot vers l’ingénierie logicielle. Cette rigueur scientifique et cette pensée systémique définissent ma façon de structurer chaque problème avant même d’écrire la première ligne de code.",
     about_cv: "Télécharger mon CV",
-    about_subtitle: "Développeur Fullstack & Fondateur de Arkan.",
+    about_subtitle: "Développeur Fullstack & Fondateur De Arkan.",
     
     // Arkan Page
     arkan_tagline: "L’agence technologique de demain",
@@ -132,8 +132,8 @@ const translations = {
     service_saas: "Ingénierie SaaS",
     service_saas_desc: "Conception de produits scalables et robustes.",
     service_consulting: "Conseil Tech",
-    service_consulting_desc: "Audit, architecture et stratégie digitale.",
-    service_transformation: "Transformation Digitale",
+    service_consulting_desc: "Audit, architecture et stratégie numérique.",
+    service_transformation: "Transformation Numérique",
     service_transformation_desc: "Modernisation de vos processus métier.",
   },
   en: {
