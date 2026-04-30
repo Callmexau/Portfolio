@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -56,10 +57,13 @@ export default function AboutPage() {
                 className="relative shrink-0"
               >
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-accent/20 shadow-2xl relative z-10 bg-foreground/5">
-                  <img 
+                  <Image 
                     src="/Xau.jpeg" 
                     alt="Exaucé Jackson L." 
-                    className="w-full h-full object-cover transition-all duration-700" 
+                    fill
+                    className="object-cover transition-all duration-700" 
+                    sizes="(max-width: 768px) 128px, 160px"
+                    priority
                   />
                 </div>
                 {/* Decorative frames */}
@@ -86,20 +90,20 @@ export default function AboutPage() {
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-10 md:gap-16 flex-1 w-full px-4 md:px-0">
                 {/* Signature */}
                 <div className="flex items-center justify-center">
-                  <img src="/logo-white.jpg.jpeg" alt="Signature" className="h-6 md:h-10 w-auto dark:hidden scale-[2] md:scale-[2.5] origin-center" />
-                  <img src="/logo-black.jpg.jpeg" alt="Signature" className="h-6 md:h-10 w-auto hidden dark:block scale-[2] md:scale-[2.5] origin-center" />
+                  <Image src="/logo-white.jpg.jpeg" alt="Signature" width={100} height={40} className="h-6 md:h-10 w-auto dark:hidden scale-[2] md:scale-[2.5] origin-center" />
+                  <Image src="/logo-black.jpg.jpeg" alt="Signature" width={100} height={40} className="h-6 md:h-10 w-auto hidden dark:block scale-[2] md:scale-[2.5] origin-center" />
                 </div>
                 
                 {/* The Joker */}
                 <div className="flex items-center justify-center">
-                  <img src="/The-White.png" alt="The Joker" className="h-8 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
-                  <img src="/The-Black.png" alt="The Joker" className="h-8 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
+                  <Image src="/The-White.png" alt="The Joker" width={80} height={40} className="h-8 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
+                  <Image src="/The-Black.png" alt="The Joker" width={80} height={40} className="h-8 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
                 </div>
 
                 {/* Arkan */}
                 <div className="flex items-center justify-center">
-                  <img src="/Arkan-White.PNG" alt="Arkan" className="h-6 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
-                  <img src="/Arkan-Black.PNG" alt="Arkan" className="h-6 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
+                  <Image src="/Arkan-White.PNG" alt="Arkan" width={100} height={40} className="h-6 md:h-10 w-auto dark:hidden scale-[1.3] md:scale-[1.8] origin-center" />
+                  <Image src="/Arkan-Black.PNG" alt="Arkan" width={100} height={40} className="h-6 md:h-10 w-auto hidden dark:block scale-[1.3] md:scale-[1.8] origin-center" />
                 </div>
               </div>
 

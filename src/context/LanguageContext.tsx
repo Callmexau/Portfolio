@@ -31,6 +31,11 @@ const translations = {
     hero_description: "Je conçois des systèmes durables — applications web, logiciels métier, plateformes. Chaque solution est pensée pour résoudre des problèmes réels et créer un impact mesurable.",
     hero_cta_expertise: "Expertise",
     hero_cta_cv: "Télécharger CV",
+
+    // Hero Stats
+    stat_exp: "Années d'Expérience",
+    stat_projects: "Projets Livrés",
+    stat_clients: "Clients Satisfaits",
     
     // Expertise Bento
     expertise_tagline: "Compétences clés",
@@ -154,6 +159,11 @@ const translations = {
     hero_description: "I design sustainable systems — web applications, business software, platforms. Each solution is designed to solve real problems and create measurable impact.",
     hero_cta_expertise: "Expertise",
     hero_cta_cv: "Download CV",
+
+    // Hero Stats
+    stat_exp: "Years of Experience",
+    stat_projects: "Delivered Projects",
+    stat_clients: "Happy Clients",
     
     // Expertise Bento
     expertise_tagline: "Key Skills",

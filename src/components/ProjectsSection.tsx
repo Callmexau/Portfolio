@@ -1,8 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -57,16 +55,23 @@ function ScreenshotCarousel({ screens, title }: { screens: string[]; title: stri
         >
           {/* Image */}
           <AnimatePresence mode="wait">
-            <motion.img
+            <motion.div
               key={screens[index]}
-              src={screens[index]}
-              alt={`${title} — aperçu ${index + 1}`}
               initial={{ opacity: 0, x: 12 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-44 md:h-60 object-contain"
-            />
+              className="relative w-full h-44 md:h-60"
+            >
+              <Image
+                src={screens[index]}
+                alt={`${title} — aperçu ${index + 1}`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={index === 0}
+              />
+            </motion.div>
           </AnimatePresence>
 
           {/* Bottom gradient */}

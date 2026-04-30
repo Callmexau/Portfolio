@@ -48,7 +48,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen w-full flex flex-col p-2 sm:p-4 md:p-8 lg:p-12">
+      <body 
+        className="min-h-screen w-full flex flex-col p-2 sm:p-4 md:p-8 lg:p-12"
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
