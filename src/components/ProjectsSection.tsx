@@ -187,7 +187,7 @@ export function ProjectsSection() {
       year: "2025",
       link: "https://memorialsankara.bf",
       linkType: "external" as const,
-      screens: [] as string[],
+      screens: ["/Screen/Sankara.png"],
     },
   ];
 
