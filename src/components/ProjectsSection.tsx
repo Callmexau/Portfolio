@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import Image from "next/image";

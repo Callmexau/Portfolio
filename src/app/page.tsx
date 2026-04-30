@@ -86,35 +86,6 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-[0.2em] font-medium">{t('hero_cta_cv')}</span>
                 </a>
               </div>
-
-              {/* Stats Section */}
-              <motion.div 
-                className="mt-12 md:mt-16 flex items-center gap-8 md:gap-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl md:text-3xl font-[family-name:var(--font-playfair)] font-bold text-accent">5+</span>
-                  <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-foreground/40 max-w-[80px]">
-                    {t('stat_exp')}
-                  </span>
-                </div>
-                <div className="w-[1px] h-8 bg-foreground/10" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl md:text-3xl font-[family-name:var(--font-playfair)] font-bold text-accent">15+</span>
-                  <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-foreground/40 max-w-[80px]">
-                    {t('stat_projects')}
-                  </span>
-                </div>
-                <div className="w-[1px] h-8 bg-foreground/10" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl md:text-3xl font-[family-name:var(--font-playfair)] font-bold text-accent">100%</span>
-                  <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-foreground/40 max-w-[80px]">
-                    {t('stat_clients')}
-                  </span>
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Scroll Down Indicator */}
