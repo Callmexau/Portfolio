@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight, Images, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -123,10 +124,40 @@ function ScreenshotCarousel({ screens, title }: { screens: string[]; title: stri
   );
 }
 
-export function ProjectsSection() {
+export function ProjectsSection({ limit, hideHeader = false }: { limit?: number; hideHeader?: boolean }) {
   const { t } = useLanguage();
 
   const projects = [
+    {
+      title: "Briefing",
+      category: t('proj_briefing_cat'),
+      description: t('proj_briefing_desc'),
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+      year: "2026",
+      link: "https://github.com/Callmexau/Briefieng",
+      linkType: "github" as const,
+      screens: ["/Screen/Briefing.png", "/Screen/Briefing2.png", "/Screen/Briefing3.png", "/Screen/Briefing4.png"],
+    },
+    {
+      title: "Mémorial Thomas Sankara",
+      category: t('proj_sankara_cat'),
+      description: t('proj_sankara_desc'),
+      stack: ["WordPress", "PHP", "CSS"],
+      year: "2025",
+      link: "https://memorialsankara.bf",
+      linkType: "external" as const,
+      screens: ["/Screen/Sankara.png"],
+    },
+    {
+      title: "Gestion Stages - CIMBURKINA",
+      category: t('proj_cimburkina_cat'),
+      description: t('proj_cimburkina_desc'),
+      stack: ["Laravel", "PHP", "MySQL"],
+      year: "2026",
+      link: null,
+      linkType: "none" as const,
+      screens: ["/Screen/CimStage.png", "/Screen/CimStage2.png", "/Screen/CimStage3.png"],
+    },
     {
       title: "Utopia",
       category: t('proj_utopia_cat'),
@@ -146,16 +177,6 @@ export function ProjectsSection() {
       link: null,
       linkType: "none" as const,
       screens: ["/Screen/Focus.png", "/Screen/Focus2.png", "/Screen/Focus3.png", "/Screen/Focus4.png"],
-    },
-    {
-      title: "Gestion Stages - CIMBURKINA",
-      category: t('proj_cimburkina_cat'),
-      description: t('proj_cimburkina_desc'),
-      stack: ["Laravel", "PHP", "MySQL"],
-      year: "2026",
-      link: null,
-      linkType: "none" as const,
-      screens: ["/Screen/CimStage.png", "/Screen/CimStage2.png", "/Screen/CimStage3.png"],
     },
     {
       title: "CimConvert",
@@ -187,42 +208,36 @@ export function ProjectsSection() {
       linkType: "none" as const,
       screens: ["/Screen/MCCAT.png", "/Screen/MCCAT2.png"],
     },
-    {
-      title: "Mémorial Thomas Sankara",
-      category: t('proj_sankara_cat'),
-      description: t('proj_sankara_desc'),
-      stack: ["WordPress", "PHP", "CSS"],
-      year: "2025",
-      link: "https://memorialsankara.bf",
-      linkType: "external" as const,
-      screens: ["/Screen/Sankara.png"],
-    },
   ];
+
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
     <section id="realisations" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
       {/* Section Header */}
-      <motion.div
-        className="mb-16 md:mb-24"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-[1px] bg-accent" />
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
-            {t('projects_tagline')}
-          </span>
-        </div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight leading-[1.15]">
-          {t('projects_title')}
-        </h2>
-      </motion.div>
+      {!hideHeader && (
+        <motion.div
+          className="mb-16 md:mb-24"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-[1px] bg-accent" />
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
+              {t('projects_tagline')}
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-tight leading-[1.15]">
+            {t('projects_title')}
+          </h2>
+        </motion.div>
+      )}
 
       {/* Projects List */}
       <div className="flex flex-col gap-0">
-        {projects.map((project, i) => (
+        {displayedProjects.map((project, i) => (
           <motion.article
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
@@ -289,6 +304,29 @@ export function ProjectsSection() {
           </motion.article>
         ))}
       </div>
+
+      {/* View All Button */}
+      {limit && projects.length > limit && (
+        <motion.div 
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Link
+            href="/realisations"
+            className="group flex items-center gap-4 px-8 py-4 rounded-full border border-accent/20 hover:bg-accent transition-all duration-500 shadow-lg shadow-accent/5"
+          >
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-accent group-hover:text-background transition-colors duration-500">
+              {t('projects_view_all')}
+            </span>
+            <div className="w-8 h-[1px] bg-accent/30 group-hover:bg-background/40 transition-all duration-500 relative">
+              <ArrowRight className="absolute -right-1 top-1/2 -translate-y-1/2 w-3 h-3 text-transparent group-hover:text-background transition-colors duration-500" />
+            </div>
+          </Link>
+        </motion.div>
+      )}
     </section>
   );
 }

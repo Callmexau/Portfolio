@@ -195,7 +195,7 @@ export default function Home() {
 
       {/* ── Réalisations Section ── */}
       <div className="w-full bg-background rounded-[1.5rem] md:rounded-[2.5rem] border border-foreground/10 relative overflow-hidden shadow-2xl shadow-black/5">
-        <ProjectsSection />
+        <ProjectsSection limit={3} />
       </div>
 
       {/* ── Contact Section ── */}

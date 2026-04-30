@@ -21,7 +21,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/#expertise", label: t('nav_expertise') },
-    { href: "/#realisations", label: t('nav_projects') },
+    { href: "/realisations", label: t('nav_projects') },
     { href: "/#contact", label: t('nav_contact') },
     { href: "/about", label: t('nav_about') },
     { href: "/arkan", label: t('nav_arkan') },

@@ -62,6 +62,7 @@ const translations = {
     projects_tagline: "Réalisations sélectionnées",
     projects_title: "Réalisations",
     projects_discover: "Découvrir",
+    projects_view_all: "Voir toutes les réalisations",
 
     // Experience Section
     exp_tagline: "Parcours professionnel",
@@ -95,6 +96,9 @@ const translations = {
 
     proj_sankara_cat: "Site Web Institutionnel",
     proj_sankara_desc: "Participation à la création du site web officiel du Mémorial Thomas Sankara pour le Ministère de la Communication du Burkina Faso.",
+
+    proj_briefing_cat: "Plateforme SaaS",
+    proj_briefing_desc: "Plateforme SaaS de cadrage client permettant aux freelances et agences de générer un lien unique à partager. Les clients remplissent un formulaire structuré en 7 étapes, et le brief est automatiquement transmis par mail puis centralisé.",
     
     // Contact Section
     contact_tagline: "Disponible pour de nouveaux projets",
@@ -185,6 +189,7 @@ const translations = {
     projects_tagline: "Selected Achievements",
     projects_title: "Projects",
     projects_discover: "Discover",
+    projects_view_all: "View all projects",
 
     // Experience Section
     exp_tagline: "Professional Background",
@@ -218,6 +223,9 @@ const translations = {
 
     proj_sankara_cat: "Institutional Website",
     proj_sankara_desc: "Participation in the creation of the official website for the Thomas Sankara Memorial for the Ministry of Communication of Burkina Faso.",
+
+    proj_briefing_cat: "SaaS Platform",
+    proj_briefing_desc: "Client scoping SaaS platform allowing freelancers and agencies to generate a unique shareable link. Clients fill out a structured 7-step form, and the brief is automatically emailed and centralized.",
     
     // Contact Section
     contact_tagline: "Available for new projects",
