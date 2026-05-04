@@ -169,10 +169,10 @@ export function ProjectsSection({ limit, hideHeader = false }: { limit?: number;
       screens: ["/Screen/Sankara.png"],
     },
     {
-      title: "Gestion Stages - CIMBURKINA",
+      title: "CIMBURKINA E-Stage",
       category: t('proj_cimburkina_cat'),
       description: t('proj_cimburkina_desc'),
-      stack: ["Laravel", "PHP", "MySQL"],
+      stack: ["Laravel", "PHP", "PostgreSQL", "AdminLTE"],
       year: "2026",
       link: null,
       linkType: "none" as const,
@@ -210,7 +210,9 @@ export function ProjectsSection({ limit, hideHeader = false }: { limit?: number;
     },
   ];
 
-  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+  const displayedProjects = limit 
+    ? projects.slice(0, limit) 
+    : [...projects].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
   return (
     <section id="realisations" className="w-full py-12 md:py-16 px-6 md:px-10 lg:px-16">

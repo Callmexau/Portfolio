@@ -59,7 +59,8 @@ const translations = {
     exp_modeling_desc: "Modélisation de systèmes avec UML et Merise, planification de projets avec StarUML et GanttProject, pilotage en méthode Agile.",
     
     // Projects Section
-    projects_tagline: "Réalisations sélectionnées",
+    projects_tagline: "Mes réalisations",
+    projects_all_tagline: "Toutes mes réalisations",
     projects_title: "Réalisations",
     projects_discover: "Découvrir",
     projects_view_all: "Voir toutes les réalisations",
@@ -77,7 +78,7 @@ const translations = {
     exp_cta_btn: "Me contacter",
     
     proj_flow_cat: "Application Desktop",
-    proj_flow_desc: "Application desktop de conversion de formats de fichiers. Disponible sur Windows.",
+    proj_flow_desc: "Application de conversion de fichiers pour Windows, disponible en téléchargement gratuit depuis son dépôt GitHub.",
     
     proj_utopia_cat: "Service Web",
     proj_utopia_desc: "Service web d'invitations numériques personnalisées — création, personnalisation et partage d'invitations élégantes en ligne.",
@@ -186,7 +187,8 @@ const translations = {
     exp_modeling_desc: "System modelling with UML and Merise, project planning with StarUML and GanttProject, Agile project management.",
     
     // Projects Section
-    projects_tagline: "Selected Achievements",
+    projects_tagline: "My Achievements",
+    projects_all_tagline: "All My Achievements",
     projects_title: "Projects",
     projects_discover: "Discover",
     projects_view_all: "View all projects",
@@ -204,7 +206,7 @@ const translations = {
     exp_cta_btn: "Contact me",
     
     proj_flow_cat: "Desktop Application",
-    proj_flow_desc: "Desktop application for file format conversion. Available on Windows.",
+    proj_flow_desc: "Windows file conversion application, available for free download via its GitHub repository.",
     
     proj_utopia_cat: "Web Service",
     proj_utopia_desc: "Web service for personalized digital invitations — creation, customization, and sharing of elegant online invitations.",

@@ -16,8 +16,8 @@ export default function RealisationsPage() {
         <Navbar />
       </div>
 
-      <main className="flex-1 flex flex-col items-center justify-center p-6 md:p-12 lg:p-24">
-        <div className="w-full max-w-6xl bg-background rounded-[2.5rem] border border-foreground/10 p-8 md:p-16 shadow-2xl relative overflow-hidden">
+      <main className="flex-1 flex flex-col items-center justify-center p-2 md:p-4 lg:p-6">
+        <div className="w-full bg-background rounded-[1.5rem] md:rounded-[2.5rem] border border-foreground/10 p-6 md:p-10 lg:p-16 shadow-2xl relative overflow-hidden">
           {/* Back Button */}
           <Link 
             href="/" 
@@ -35,7 +35,7 @@ export default function RealisationsPage() {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-accent" />
               <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50">
-                {t('projects_tagline')}
+                {t('projects_all_tagline')}
               </span>
             </div>
 
