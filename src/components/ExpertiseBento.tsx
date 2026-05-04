@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -7,6 +8,7 @@ import { ExternalLink } from "lucide-react";
 
 export function ExpertiseBento() {
   const { t } = useLanguage();
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
   const expertise = [
     {
@@ -21,7 +23,7 @@ export function ExpertiseBento() {
       title: t('exp_dev_title'),
       subtitle: t('exp_dev_subtitle'),
       description: t('exp_dev_desc'),
-      technologies: ["Laravel", "MySQL", "API REST", "SQL"],
+      technologies: ["Laravel", "PostgreSQL", "MySQL", "API REST", "SQL"],
       gridArea: "devops",
       accent: false,
     },
@@ -52,7 +54,7 @@ export function ExpertiseBento() {
   ];
 
   return (
-    <section id="expertise" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
+    <section id="expertise" className="w-full py-12 md:py-16 px-6 md:px-10 lg:px-16">
       {/* Section Header */}
       <motion.div
         className="mb-16 md:mb-24"
@@ -72,47 +74,32 @@ export function ExpertiseBento() {
         </h2>
       </motion.div>
 
-      {/* Bento Grid */}
-      <div className="bento-grid">
+      {/* Expertise List */}
+      <div className="flex flex-col border-t border-foreground/10">
         {expertise.map((item, i) => (
           <motion.div
             key={item.gridArea}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              delay: i * 0.1,
-              duration: 0.7,
-              ease: "easeOut"
-            }}
-            whileHover={{ 
-              y: -8,
-              scale: 1.01,
-              transition: { duration: 0.4, ease: "easeOut" }
-            }}
+            transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
-            className={`bento-card h-full bento-${item.gridArea} cursor-pointer group`}
+            className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-12 py-8 md:py-12 border-b border-foreground/10 hover:bg-foreground/[0.02] px-4 md:px-8 -mx-4 md:-mx-8 transition-colors duration-500"
           >
-            {/* Card inner glow on hover */}
-            <div className="absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-accent/5 via-transparent to-transparent pointer-events-none" />
-
-            {/* Top accent line for featured card */}
-            {item.accent && (
-              <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
-            )}
-
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="mb-6">
-                <span className="text-[9px] uppercase tracking-[0.3em] text-accent font-bold mb-2 block">{item.subtitle}</span>
-                <h3 className="text-xl md:text-2xl font-[family-name:var(--font-playfair)] font-bold tracking-tight group-hover:text-accent transition-colors duration-500">{item.title}</h3>
-              </div>
-              
-              <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-light mb-8 flex-1">
+            {/* Title & Subtitle */}
+            <div className="md:w-1/3 shrink-0">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-accent font-medium mb-3 block opacity-80">{item.subtitle}</span>
+              <h3 className="text-xl md:text-2xl font-[family-name:var(--font-playfair)] font-bold tracking-tight group-hover:text-accent transition-colors duration-500">{item.title}</h3>
+            </div>
+            
+            {/* Description & Tech */}
+            <div className="md:w-2/3 flex flex-col">
+              <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-light mb-6 max-w-2xl">
                 {item.description}
               </p>
-
-              <div className="flex flex-wrap gap-2 mt-auto">
+              
+              <div className="flex flex-wrap gap-2">
                 {item.technologies.map((tech) => (
-                  <span key={tech} className="text-[8px] md:text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-md border border-foreground/5 bg-foreground/[0.01] text-foreground/40 group-hover:border-accent/20 group-hover:text-foreground/60 transition-all duration-500">
+                  <span key={tech} className="text-[8px] md:text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-foreground/10 bg-background text-foreground/40 group-hover:border-accent/20 group-hover:text-accent/70 transition-all duration-500">
                     {tech}
                   </span>
                 ))}
@@ -269,7 +256,7 @@ export function ExpertiseBento() {
             { name: "Google Project Management", org: "Coursera — Certification professionnelle", file: "/certs/google-project-management.pdf" },
             { name: "Data Engineering Essentials", org: "IBM — Coursera", file: "/certs/data-engineering.pdf" },
             { name: "Agile Project Management", org: "Coursera — Formation certifiante", file: "/certs/agile-project-management.pdf" },
-          ].map((cert) => (
+          ].slice(0, showAllCerts ? undefined : 4).map((cert) => (
             <a
               key={cert.name}
               href={cert.file}
@@ -285,6 +272,16 @@ export function ExpertiseBento() {
               <ExternalLink className="w-3.5 h-3.5 text-foreground/20 group-hover:text-accent/60 mt-1 shrink-0 transition-colors duration-500" />
             </a>
           ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={() => setShowAllCerts(!showAllCerts)}
+            className="group flex items-center gap-4 px-6 py-3 rounded-full border border-accent/20 hover:bg-accent transition-all duration-500 shadow-lg shadow-accent/5"
+          >
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-accent group-hover:text-background transition-colors duration-500">
+              {showAllCerts ? "Voir moins" : "Voir plus"}
+            </span>
+          </button>
         </div>
       </motion.div>
     </section>

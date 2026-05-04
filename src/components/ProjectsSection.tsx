@@ -139,6 +139,26 @@ export function ProjectsSection({ limit, hideHeader = false }: { limit?: number;
       screens: ["/Screen/Briefing.png", "/Screen/Briefing2.png", "/Screen/Briefing3.png", "/Screen/Briefing4.png"],
     },
     {
+      title: "FlowConvert",
+      category: t('proj_flow_cat'),
+      description: t('proj_flow_desc'),
+      stack: ["Electron", "JavaScript", "Node.js"],
+      year: "2025",
+      link: "https://github.com/Callmexau/FlowConvert/releases/tag/v1.0.0",
+      linkType: "github" as const,
+      screens: ["/Screen/Flowconvert.jpeg"],
+    },
+    {
+      title: "MCCAT E-Stage",
+      category: t('proj_mccat_cat'),
+      description: t('proj_mccat_desc'),
+      stack: ["Laravel", "PHP", "PostgreSQL", "AdminLTE"],
+      year: "2025",
+      link: null,
+      linkType: "none" as const,
+      screens: ["/Screen/MCCAT.png", "/Screen/MCCAT2.png"],
+    },
+    {
       title: "Mémorial Thomas Sankara",
       category: t('proj_sankara_cat'),
       description: t('proj_sankara_desc'),
@@ -188,32 +208,12 @@ export function ProjectsSection({ limit, hideHeader = false }: { limit?: number;
       linkType: "none" as const,
       screens: ["/Screen/CimConvert.png"],
     },
-    {
-      title: "FlowConvert",
-      category: t('proj_flow_cat'),
-      description: t('proj_flow_desc'),
-      stack: ["Electron", "JavaScript", "Node.js"],
-      year: "2025",
-      link: "https://github.com/Callmexau/FlowConvert/releases/tag/v1.0.0",
-      linkType: "github" as const,
-      screens: [] as string[],
-    },
-    {
-      title: "Gestion Stages - MCCAT",
-      category: t('proj_mccat_cat'),
-      description: t('proj_mccat_desc'),
-      stack: ["Laravel", "PHP", "MySQL"],
-      year: "2025",
-      link: null,
-      linkType: "none" as const,
-      screens: ["/Screen/MCCAT.png", "/Screen/MCCAT2.png"],
-    },
   ];
 
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="realisations" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
+    <section id="realisations" className="w-full py-12 md:py-16 px-6 md:px-10 lg:px-16">
       {/* Section Header */}
       {!hideHeader && (
         <motion.div

@@ -92,7 +92,7 @@ const translations = {
     proj_cimconvert_desc: "Outil de conversion de formats de fichiers développé pour CIMBURKINA — disponible en version web et en application desktop Windows.",
     
     proj_mccat_cat: "Application Web",
-    proj_mccat_desc: "Conception, développement et intégration d'une plateforme de gestion des stages pour le Ministère de la Communication (MCCAT).",
+    proj_mccat_desc: "Conception, développement et intégration d'une plateforme de gestion des stages pour le Ministère de la Communication, de la Culture, des Arts et du Tourisme (MCCAT) du Burkina Faso.",
 
     proj_sankara_cat: "Site Web Institutionnel",
     proj_sankara_desc: "Participation à la création du site web officiel du Mémorial Thomas Sankara pour le Ministère de la Communication du Burkina Faso.",
@@ -219,7 +219,7 @@ const translations = {
     proj_cimconvert_desc: "File format conversion tool developed for CIMBURKINA — available as a web version and a Windows desktop application.",
     
     proj_mccat_cat: "Web Application",
-    proj_mccat_desc: "Design, development, and integration of an internship management platform for the Ministry of Communication (MCCAT).",
+    proj_mccat_desc: "Design, development, and integration of an internship management platform for the Ministry of Communication, Culture, Arts and Tourism (MCCAT) of Burkina Faso.",
 
     proj_sankara_cat: "Institutional Website",
     proj_sankara_desc: "Participation in the creation of the official website for the Thomas Sankara Memorial for the Ministry of Communication of Burkina Faso.",

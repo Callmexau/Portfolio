@@ -27,7 +27,7 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8">
+      <div className="flex flex-col gap-6 p-2 md:p-4 lg:p-6">
         {/* ── Hero Card ── */}
         <div className="w-full min-h-[calc(100vh-140px)] bg-background rounded-[2rem] border border-foreground/10 relative overflow-hidden flex flex-col shadow-2xl shadow-black/5">
 

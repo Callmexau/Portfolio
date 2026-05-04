@@ -41,7 +41,7 @@ export function ExperienceSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="experience" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-24">
+    <section id="experience" className="w-full py-12 md:py-16 px-6 md:px-10 lg:px-16">
       {/* Section Header */}
       <motion.div
         className="mb-16 md:mb-24"
